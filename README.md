@@ -33,21 +33,22 @@ Now you will have to open your micro-SD card&#39;s home folder. Add an empty fil
 
 You can find your raspberry pi&#39;s IP by opening the terminal on your pc and running the following command:
 
-Ping raspberrypi
+> Ping raspberrypi
 
 Once you obtain the IP from your Pi you can access it remotely by using Putty. You can download this program here: [https://www.putty.org/](https://www.putty.org/)
 
 Open Putty, enter the IP from your raspberry pi, port 22 and select SSH. A new window will open. Accept the certificates and log in with username: pi and password raspberry
 
-![](RackMultipart20200514-4-8hvo28_html_d812119e994a22ba.png)
+<img src="images/2.png">
 
 ### Install RaspAP and hostapd
 
 Open the terminal from your raspberry pi and run the following command:
-
+```shell
 sudo cp /etc/wpa\_supplicant/wpa\_supplicant.conf /etc/wpa\_supplicant/wpa\_supplicant.conf.sav
 
 sudo cp /dev/null /etc/wpa\_supplicant/wpa\_supplicant.conf
+```
 
 Finally, edit in the file /etc/wpa\_supplicant/wpa\_supplicant.conf and add the following lines:
 
