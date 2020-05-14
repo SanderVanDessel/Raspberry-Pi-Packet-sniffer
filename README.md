@@ -52,7 +52,7 @@ sudo cp /etc/wpa\_supplicant/wpa\_supplicant.conf /etc/wpa\_supplicant/wpa\_supp
 sudo cp /dev/null /etc/wpa\_supplicant/wpa\_supplicant.conf
 ```
 
-Finally, edit in the file /etc/wpa\_supplicant/wpa\_supplicant.conf and add the following lines:
+Finally, edit in the file */etc/wpa\_supplicant/wpa\_supplicant.conf* and add the following lines:
 ```shell
 ctrl\_interface=DIR=/var/run/wpa\_supplicant GROUP=netdev
 
