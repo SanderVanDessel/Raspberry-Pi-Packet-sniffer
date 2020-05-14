@@ -7,11 +7,12 @@ Sander Van Dessel &amp; Joey Van Erum
 
 Requirements:
 
-⋅⋅* A raspberry pi 3 or newer
-⋅⋅* A power supply for your raspberry pi
-⋅⋅* A MicroSD card of at least 8GB
-⋅⋅* An Ethernet cables
-⋅⋅* A MicroSD Adapter (Optional)
+  * A raspberry pi 3 or newer
+  * A power supply for your raspberry pi
+  * A MicroSD card of at least 8GB
+  * An Ethernet cables
+  * A MicroSD Adapter (Optional)
+
 
 ###
 <img src="images/1.jpg">
