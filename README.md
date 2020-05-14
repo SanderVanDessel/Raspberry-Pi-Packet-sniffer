@@ -14,7 +14,7 @@ Requirements:
 - A MicroSD Adapter (Optional)
 
 ###
-<img src="images/1.png">
+<img src="images/1.jpg">
 
 ### Raspberry Pi basic setup
 
