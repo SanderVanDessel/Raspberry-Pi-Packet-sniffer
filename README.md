@@ -33,7 +33,9 @@ Now you will have to open your micro-SD card&#39;s home folder. Add an empty fil
 
 You can find your raspberry pi&#39;s IP by opening the terminal on your pc and running the following command:
 
-> Ping raspberrypi
+```shell
+Ping raspberrypi
+```
 
 Once you obtain the IP from your Pi you can access it remotely by using Putty. You can download this program here: [https://www.putty.org/](https://www.putty.org/)
 
@@ -51,10 +53,11 @@ sudo cp /dev/null /etc/wpa\_supplicant/wpa\_supplicant.conf
 ```
 
 Finally, edit in the file /etc/wpa\_supplicant/wpa\_supplicant.conf and add the following lines:
-
+```shell
 ctrl\_interface=DIR=/var/run/wpa\_supplicant GROUP=netdev
 
 update\_config=1
+```
 
 The Wi-Fi interface has now been made available.
 
@@ -62,35 +65,38 @@ Now we will install hostapd and a user-friendly interface by using RaspAP (for m
 
 The installation of RaspAP can easily be done by running a single command and following the steps shown in the terminal.
 
+```shell
 wget -q https://git.io/voEUQ -O /tmp/raspap &amp;&amp; bash /tmp/raspap
+```
 
 In our case there was the need for some extra configuration before the network became available. If it is already available, you can skip the following steps:
 
 Open the following file:
-
+```shell
 sudo nano /etc/hostapd/hostapd.conf
-
+```
 And add the following line:
-
+```shell
 logger\_syslog=-1
-
+```
 Run the following command
-
+```shell
 sudo cat /var/log/syslog | grep hostapd
-
+```
 And:
-
+```shell
 sudo systemctl unmask hostapd
 
 sudo systemctl enable hostapd
 
 sudo systemctl start hostapd
-
+```
 restart your raspberry pi with the sudo reboot command.
 
 ### Connect to your Wi-Fi hotspot
 
-![](RackMultipart20200514-4-8hvo28_html_5119c5fb44cef39f.png)
+
+<img src="images/3.png">
 
 Now a network called &quot;raspi-webgui&quot; should be available. When you connect to this Wi-Fi-network on your pc, you can access the interface by browsing to 10.3.141.1. (The default Wi-Fi password is ChangeMe ). The default username and password for the interface are:
 
@@ -98,27 +104,28 @@ Username: admin
 
 Password: secret
 
-![](RackMultipart20200514-4-8hvo28_html_b3d8cc99c74b3c90.png)
+<img src="images/4.png">
 
 The console can also be accessed by browsing to your Raspberry Pi&#39;s IP-address obtained in the first step (while connected to the same router).
 
 ### Installing TCPDump
 
 The last step to creating a packet sniffer is installing TCPDump. This tool is installed with the following command:
-
+```shell
 Sudo apt-get install tcpdump
+```
 
 When the installation finishes you can start to capture traffic from every device connected to the network of your raspberry pi. We recommend capturing data by specifying your host and creating a pcap fie which later can be analyzed with Wireshark.
 
 Example:
-
+```shell
 sudo tcpdump host 10.3.141.145 -i wlan0 -w test
-
+```
 This command captures all network packet going from and to the device 10.3.141.145 and creates a file called test.
 
 Example pcap file:
 
-![](RackMultipart20200514-4-8hvo28_html_e437e6176dd8207d.png)
+<img src="images/5.png">
 
 Sources:
 
