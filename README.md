@@ -1,5 +1,3 @@
-Sander Van Dessel &amp; Joey Van Erum
-
 # Packet sniffer install guide
 
 ### Prerequisites
