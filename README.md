@@ -5,6 +5,7 @@ Packet sniffer install guide
 Prerequisites
 
 Requirements:
+
 •	A raspberry pi 3 or newer
 •	A power supply for your raspberry pi
 •	A MicroSD card of at least 8GB
